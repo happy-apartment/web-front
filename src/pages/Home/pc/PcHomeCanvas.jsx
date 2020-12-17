@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core";
 import { IndexContext } from './PcHome';
 import { BarChart } from './components/BarChart'
 import { Scatter } from "./components/scatter";
+import InteractionBarChart from "./components/Interaction/InteractionBarChart";
 import {
     PRICE_BAR,
     HAPPY_BAR,
@@ -40,16 +41,16 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-const PcHomeCanvas = () => {
+const PcHomeCanvas = ({weight}) => {
     const classes = useStyles();
 
-    const { state, dispatch } = useContext(IndexContext);
+    const { indexState, indexDispatch } = useContext(IndexContext);
 
     return (
         <div className={classes.root}>
             <div className={classes.graphic}>
                 {(function () {
-                    switch (state) {
+                    switch (indexState) {
                         // 여기에 스크립트 순서에 맞게 보여주고 싶은 컴포넌트를 넣으시면 됩니다.
                         case 0:
                             // src/components/BarChart 안에 BarChart.jsx 로 찾아가주세요
@@ -58,7 +59,7 @@ const PcHomeCanvas = () => {
 
                         case PRICE_BAR: // BarChart - House Price
                         case HAPPY_BAR: // BarChart - House Price => Happiness
-                            return (<BarChart index={state}/>);
+                            return (<BarChart index={indexState}/>);
 
                         case ECO_SCATTER: // 여가지수 - 집값
                         case EDU_SCATTER: // 안전
@@ -67,10 +68,9 @@ const PcHomeCanvas = () => {
                         case HBY_SCATTER: //
                         case REL_SCATTER:
                         case SAF_SCATTER:
-                            return (<Scatter index={state}/>);
+                            return (<Scatter index={indexState}/>);
                         case INTERACTION:
-                            // return (<InteractionBarChart interactionWeight={interactionWeight}/>);
-                            return (<p>Interaction</p>);
+                            return (<InteractionBarChart weight={weight}/>);
                         default:
                             return (<p></p>);
                     }

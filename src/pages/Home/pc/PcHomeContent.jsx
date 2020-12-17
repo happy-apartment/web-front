@@ -1,10 +1,12 @@
-import React, {useEffect, useMemo, useCallback, useContext} from 'react';
+import React, {useEffect, useMemo, useCallback, useContext, useState} from 'react';
 import { makeStyles } from "@material-ui/core";
 import PcHomeSection from './components/PcHomeSection';
 import { titles, descriptions } from './texts/content-text';
-import { IndexContext } from './PcHome';
+import {IndexContext, InteractionContext} from './PcHome';
 import * as d3 from 'd3';
 import {UPDATE_INDEX} from "../../../constants";
+import {Interaction} from "./components/Interaction";
+import {UPDATE_INIT} from "./components/Interaction/constants";
 
 const useStyles = makeStyles((theme) => ({
     container: {
@@ -12,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
         width: "30vw",
         minWidth: "470px",
         maxWidth: "500px",
-        height: "150vh",
+        height: "500px",
         display: "inline-block",
     },
 
@@ -21,7 +23,12 @@ const useStyles = makeStyles((theme) => ({
         paddingTop: "2vw",
         paddingLeft: "1.5vw",
         paddingRight: "1.5vw",
+        marginBottom: "300px",
     },
+
+    extra: {
+        height: "300px",
+    }
 }));
 
 let container;
@@ -30,10 +37,10 @@ let sectionPositions;
 let currentIndex;
 let containerStart;
 
-const PcHomeContent = () => {
+const PcHomeContent = ({callback}) => {
     const classes = useStyles();
 
-    const { state, dispatch } = useContext(IndexContext);
+    const { indexState, indexDispatch } = useContext(IndexContext);
 
     function resize() {
         // sectionPositions will be each sections
@@ -60,7 +67,7 @@ const PcHomeContent = () => {
         // console.log("current index:", currentIndex)
         // console.log("section index:", sectionIndex)
         if (currentIndex !== sectionIndex) {
-            // @v4 you now `.call` the dispatch callback
+            // @v4 you now `.call` the indexDispatch callback
             handleScroll(sectionIndex);
             currentIndex = sectionIndex;
         }
@@ -69,7 +76,7 @@ const PcHomeContent = () => {
     const handleScroll = useCallback((index) => {
         d3.selectAll('.step')
             .style('opacity', function (d, i) { return i === index ? 1 : 0.1; });
-        dispatch({type: UPDATE_INDEX, data: index})
+        indexDispatch({type: UPDATE_INDEX, data: index})
     }, []);
 
     useEffect(() => {
@@ -96,14 +103,17 @@ const PcHomeContent = () => {
     });
 
     const sectionsContent = useMemo(() => {
-        return titles.map((t, i) => <PcHomeSection key={i} title={t} descriptions={descriptions[i]}/>)
+        return titles.filter((d, i) => {return i < titles.length - 1}).map((t, i) => <PcHomeSection key={i} title={t} descriptions={descriptions[i]} isInter="0"/>)
     }, []);
 
     return (
         <div className={classes.container}>
             <div className={classes.wrapper} id="section-wrapper">
                 {sectionsContent}
+                <PcHomeSection key={titles.length - 1} title={titles[titles.length - 1]} descriptions={descriptions[titles.length - 1]} isInter="1" callback={callback} />
             </div>
+
+            <div className={classes.extra}> </div>
         </div>
     )
 };
