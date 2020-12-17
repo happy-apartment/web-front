@@ -6,7 +6,7 @@ import { UPDATE_INDEX } from '../../../constants';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        backgroundColor: "#AFECB0",
+        // backgroundColor: "#AFECB0",
         paddingTop: "2vh",
     },
 

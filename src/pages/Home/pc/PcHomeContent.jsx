@@ -8,7 +8,7 @@ import {UPDATE_INDEX} from "../../../constants";
 
 const useStyles = makeStyles((theme) => ({
     container: {
-        backgroundColor: "#45BD20",
+        // backgroundColor: "#45BD20",
         width: "30vw",
         minWidth: "470px",
         maxWidth: "500px",

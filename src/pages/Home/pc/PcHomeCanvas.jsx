@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { makeStyles } from "@material-ui/core";
 import { IndexContext } from './PcHome';
-
+import { BarChart } from './components/BarChart'
 import {
     PRICE_BAR,
     HAPPY_BAR,
@@ -17,9 +17,7 @@ import {
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        width: "30vw",
-        minWidth: "500px",
-        maxWidth: "1000px",
+        width: "600px",
         display: "inline-block",
         position: "fixed",
 
@@ -31,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
     },
 
     graphic: {
-        backgroundColor: "#112295",
+        // backgroundColor: "#112295",
         position: 'absolute',
         top: 0,
         right: 0,
@@ -59,8 +57,7 @@ const PcHomeCanvas = () => {
 
                         case PRICE_BAR: // BarChart - House Price
                         case HAPPY_BAR: // BarChart - House Price => Happiness
-                            // return (<BarChart index={index} result={result} color={color}/>);
-                            return (<p>Bar Chart</p>);
+                            return (<BarChart index={state}/>);
 
                         case ECO_SCATTER: // 여가지수 - 집값
                         case EDU_SCATTER: // 안전
