@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {createContext, useReducer} from 'react';
 import { makeStyles } from "@material-ui/core";
 import PcHomeContent from "./PcHomeContent";
 import PcHomeCanvas from "./PcHomeCanvas";
+import { UPDATE_INDEX } from '../../../constants';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -18,14 +19,28 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
+export const IndexContext = createContext();
+
+const initialIndex = -1;
+
+const reducer = (state, action) => {
+    if (action.type === UPDATE_INDEX) {
+        return action.data
+    }
+};
+
 const PcHome = () => {
     const classes = useStyles();
+
+    const [state, dispatch] = useReducer(reducer, initialIndex);
 
     return (
         <div className={classes.root}>
             <div className={classes.wrapper}>
-                <PcHomeContent/>
-                <PcHomeCanvas/>
+                <IndexContext.Provider value={{state, dispatch}}>
+                    <PcHomeContent/>
+                    <PcHomeCanvas/>
+                </IndexContext.Provider>
             </div>
         </div>
     )

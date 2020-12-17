@@ -1,9 +1,10 @@
-import React, { useEffect, useMemo, useCallback } from 'react';
+import React, {useEffect, useMemo, useCallback, useContext} from 'react';
 import { makeStyles } from "@material-ui/core";
 import PcHomeSection from './components/PcHomeSection';
 import { titles, descriptions } from './texts/content-text';
-
+import { IndexContext } from './PcHome';
 import * as d3 from 'd3';
+import {UPDATE_INDEX} from "../../../constants";
 
 const useStyles = makeStyles((theme) => ({
     container: {
@@ -31,6 +32,8 @@ let containerStart;
 
 const PcHomeContent = () => {
     const classes = useStyles();
+
+    const { state, dispatch } = useContext(IndexContext);
 
     function resize() {
         // sectionPositions will be each sections
@@ -66,6 +69,7 @@ const PcHomeContent = () => {
     const handleScroll = useCallback((index) => {
         d3.selectAll('.step')
             .style('opacity', function (d, i) { return i === index ? 1 : 0.1; });
+        dispatch({type: UPDATE_INDEX, data: index})
     }, []);
 
     useEffect(() => {
