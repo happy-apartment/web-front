@@ -5,14 +5,14 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import { ThemeProvider } from '@material-ui/styles';
-import happiness from '../../../images/happiness.png';
-import health from '../../../images/health.png';
-import security from '../../../images/security.png';
-import environment from '../../../images/environment.png';
-import economy from '../../../images/economy.png';
-import education from '../../../images/education.png';
-import relationship from '../../../images/relationship.png';
-import leisure from '../../../images/leisure.png';
+import happiness from '../../images/happiness.png';
+import health from '../../images/health.png';
+import security from '../../images/security.png';
+import environment from '../../images/environment.png';
+import economy from '../../images/economy.png';
+import education from '../../images/education.png';
+import relationship from '../../images/relationship.png';
+import leisure from '../../images/leisure.png';
 
 const theme = createMuiTheme({
   typography: {
