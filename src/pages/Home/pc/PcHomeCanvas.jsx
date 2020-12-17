@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core";
 import { IndexContext } from './PcHome';
 import { BarChart } from './components/BarChart'
 import { Scatter } from "./components/scatter";
+import PcHomeFirst from "./components/PcHomeFirst";
 import InteractionBarChart from "./components/Interaction/InteractionBarChart";
 import {
     PRICE_BAR,
@@ -54,8 +55,7 @@ const PcHomeCanvas = ({weight}) => {
                         // 여기에 스크립트 순서에 맞게 보여주고 싶은 컴포넌트를 넣으시면 됩니다.
                         case 0:
                             // src/components/BarChart 안에 BarChart.jsx 로 찾아가주세요
-                            // return (<Welcome/>);
-                            return (<p>Welcome</p>);
+                            return (<PcHomeFirst/>);
 
                         case PRICE_BAR: // BarChart - House Price
                         case HAPPY_BAR: // BarChart - House Price => Happiness
