@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
     section: {
-        margin: "10vh 0",
+        marginBottom: "10vh",
         lineHeight: 1.5,
         color: "#767678",
         overflow: "visible",

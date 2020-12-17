@@ -12,7 +12,8 @@ const useStyles = makeStyles((theme) => ({
     wrapper: {
         width: "60vw",
         display: "block",
-        margin: "0 auto"
+        margin: "0 auto",
+        marginTop: "5vh",
     }
 
 }));
