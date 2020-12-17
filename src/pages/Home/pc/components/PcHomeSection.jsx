@@ -1,9 +1,10 @@
 import React from 'react';
 import { makeStyles } from "@material-ui/core";
+import { Interaction } from "./Interaction";
 
 const useStyles = makeStyles((theme) => ({
     section: {
-        marginBottom: "10vh",
+        marginBottom: "300px",
         lineHeight: 1.5,
         color: "#767678",
         overflow: "visible",
@@ -28,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const PcHomeSection = ({title, descriptions}) => {
+const PcHomeSection = ({title, descriptions, isInter, callback}) => {
     const classes = useStyles();
 
     return (
@@ -39,6 +40,7 @@ const PcHomeSection = ({title, descriptions}) => {
                     return <span>{d}<br/></span>;
                 })}
             </p>
+            {isInter === "1" ? <Interaction callback={callback} /> : null}
         </div>
     )
 };
