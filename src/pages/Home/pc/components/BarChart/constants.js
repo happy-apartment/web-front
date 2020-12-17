@@ -4,8 +4,8 @@ export const n = 25;
 export const k = 10;
 export const duration = 3000;
 
-export const width = 600;
-export const barSize = 20;
+export const width = 700;
+export const barSize = 25;
 export const margin = {top: 16, right: 6, bottom: 6, left: 0};
 
 export const height = margin.top + barSize * n + margin.bottom;

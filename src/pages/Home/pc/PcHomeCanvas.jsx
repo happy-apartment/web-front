@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { makeStyles } from "@material-ui/core";
 import { IndexContext } from './PcHome';
 import { BarChart } from './components/BarChart'
+import { Scatter } from "./components/scatter";
 import {
     PRICE_BAR,
     HAPPY_BAR,
@@ -17,7 +18,7 @@ import {
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        width: "600px",
+        width: "700px",
         display: "inline-block",
         position: "fixed",
 
@@ -66,8 +67,7 @@ const PcHomeCanvas = () => {
                         case HBY_SCATTER: //
                         case REL_SCATTER:
                         case SAF_SCATTER:
-                            // return (<Scatter index={index} result={result} color={color}/>);
-                            return (<p>Scatter</p>);
+                            return (<Scatter index={state}/>);
                         case INTERACTION:
                             // return (<InteractionBarChart interactionWeight={interactionWeight}/>);
                             return (<p>Interaction</p>);

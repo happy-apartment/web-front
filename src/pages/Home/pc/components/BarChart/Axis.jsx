@@ -6,7 +6,7 @@ const Axis = (svg) => {
         .attr("transform", `translate(0,${margin.top})`);
 
     const axis = d3.axisTop(x)
-        .ticks(width / 160)
+        .ticks(width / 100)
         .tickSizeOuter(0)
         .tickSizeInner(-barSize * (n + y.padding()));
 
