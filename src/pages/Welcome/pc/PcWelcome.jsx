@@ -5,14 +5,17 @@ import Typical from 'react-typical';
 
 const PcWelcome = () => {
     return (
-        <div style={{
-            width: '1920px',
-            height: '1080px',
-            flex: 1,
-            padding: 10,
-            backgroundImage: `url(${Background})`
-        }}
-        >
+      <div style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        bottom: 0,
+        right: 0,
+        backgroundImage: `url(${Background})`,
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat'
+      }}>
             <div style={{
                 width: '40%',
                 height: '20%',
