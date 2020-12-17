@@ -10,6 +10,7 @@ import ValueLabels from './ValueLabels';
 import { width, height, duration, x } from './constants';
 import { createDataset, createColorScale } from './utils';
 import { priceData, happyData } from '../../../../../data';
+import { Remark } from '../Remark';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -21,6 +22,12 @@ const useStyles = makeStyles((theme) => ({
         width: `${width}px`,
         height: `${height}px`,
     },
+
+    unit: {
+        fontSize:'0.5rem',
+        float:'right',
+        transform:'translate(0px, 15px)'
+    }
 
 }));
 
@@ -74,12 +81,14 @@ const BarChart = ({index}) => {
 
     return (
         <div className={classes.wrapper} id="barchart-wrapper">
+            <div className={classes.unit} id="barchart-unit">{index === 1 ? '(단위: 천만원)' : '행복지수 (0~100)'}</div>
             <svg className={classes.barSvg} id="barchart-svg">
                 <g id="barchart-axis-g"></g>
                 <g id="barchart-bar-g"></g>
                 <g id="barchart-label-g"></g>
                 <g id="barchart-value-label-g"></g>
             </svg>
+            <Remark id="barchart-remark"/>
         </div>
 
     )

@@ -6,7 +6,7 @@ const Labels = (svg, index) => {
     let label = svg.select("#barchart-label-g")
         .attr('font-style', 'normal')
         .attr('font-weight', '600')
-        .attr('font-size', '12px')
+        .attr('font-size', '0.7rem')
         .attr('font-family', 'sans-serif')
         .style("font-variant-numeric", "tabular-nums")
         .attr("text-anchor", "start")
