@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
         fontFamily: 'NanumSquareRoundR',
         width: '100%',
         fontSize: '90%',
-        color: '#444448',
+        color: '##9292A2',
     },
 
     expandButton: {
