@@ -46,12 +46,7 @@ const useStyles = makeStyles((theme) => ({
     description: {
         fontFamily: 'NanumSquareRoundR',
         width: '100%',
-        fontSize: '100%',
-    },
-
-    subDescription: {
-        fontFamily: 'NanumSquareRoundR',
-        fontSize: '10px',
+        fontSize: '90%',
         color: '#444448',
     },
 
