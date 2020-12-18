@@ -34,6 +34,7 @@ const useStyles = makeStyles((theme) => ({
         fontWeight: '700',
         marginBottom: '10px',
         display: 'block',
+        paddingTop: '2%',
     },
 
     descriptionWrapper: {
@@ -44,8 +45,8 @@ const useStyles = makeStyles((theme) => ({
 
     description: {
         fontFamily: 'NanumSquareRoundR',
-        width: '90%',
-        fontSize: '13px',
+        width: '100%',
+        fontSize: '100%',
     },
 
     subDescription: {
@@ -72,16 +73,19 @@ const useStyles = makeStyles((theme) => ({
     },
 
     slider: {
-        width: '86%',
+        marginTop: 0,
+        width: '100%',
         marginRight: '20px',
+        alignItem: 'center',
+        justifyContent: 'center',
     },
 
     sliderText: {
-        fontSize: '15px',
+        fontSize: '100%',
         float: 'right',
         textAlign: 'center',
         verticalAlign: 'middle',
-        paddingTop: '5px',
+        paddingTop: '2%',
     }
 }));
 
@@ -95,7 +99,7 @@ const PrettoSlider = withStyles({
         width: 20,
         backgroundColor: '#fff',
         border: '2px solid currentColor',
-        marginTop: -8,
+        marginTop: -6,
         marginLeft: -12,
         '&:focus, &:hover, &$active': {
             boxShadow: 'inherit',
@@ -144,19 +148,19 @@ const getDescription = (type) => {
             return '좋은 신체 건강 상태를 유지하면서 평균기대수명까지 삶을 영위할 수 있을 것';
 
         case UPDATE_SAF:
-            return '각종 폭력 및 위험(강도, 사고, 재난)에서 보호 받을 수 있으며 응급진료 접근성이 있을 것';
+            return '각종 폭력 및 위험(강도, 사고, 재난)에서 보호 받을 수 있으며 응급 진료 접근성이 있을 것';
 
         case UPDATE_ENV:
-            return '맑고 풍족한 물과 깨끗한 공기를 마시며  살아 갈 수 있을 것';
+            return '맑고 풍족한 물과 깨끗한 공기를 마시며  살아 갈 수 있을 것';
 
         case UPDATE_ECO:
-            return '직업을 가지고 빈곤하지 않게  살아 갈 수 있을 것';
+            return '직업을 가지고 빈곤하지 않게  살아 갈 수 있을 것';
 
         case UPDATE_EDU:
-            return '이성적으로 사고하고 판단할 수 있고 종교, 문학,  음악 등 \b\b\b\b 원하는 것을 배우고 표현하는데  있어서 제약이 없을 것';
+            return '이성적으로 사고하고 판단할 수 있고 종교, 문학, 음악 등 원하는 것을 배우고 표현하는데  있어서 제약이 없을 것';
 
         case UPDATE_REL:
-            return '다른 사람들에게 신뢰받고 존중받으며, 이웃, 나아가  조직 \b\b 및 사회 내 사람들과 함께 상호작용할 수 있을 것';
+            return '다른 사람들에게 신뢰받고 존중받으며, 이웃, 나아가  조직 및 사회 내 사람들과 함께 상호작용할 수 있을 것';
 
         case UPDATE_HBY:
             return '일상에서 여유와 웃음을 갖고 문화적 삶을 향유하며 즐거운 시간을 보낼 수 있을 것';
@@ -275,24 +279,7 @@ const InputSlider = ({selection}) => {
                     <div className={classes.description}>
                         {getDescription(selection)}
                     </div>
-
-                    <IconButton className={classes.expandButton}
-                        onClick={handleVisibility}>
-                        <ExpandMoreIcon color='#444448'/>
-                    </IconButton>
-
                 </div>
-
-                { visibility ?
-                    <div className={classes.subDescription}>
-                        <p>{getSubDescription(selection)[0]}</p>
-                        <p>{getSubDescription(selection)[1]}</p>
-                        <p>{getSubDescription(selection)[2]}</p>
-                        <p>{getSubDescription(selection)[3]}</p>
-                        <p>{getSubDescription(selection)[4]}</p>
-                    </div> :
-                    null
-                }
             </div>
 
             <div className={classes.wrapper}>

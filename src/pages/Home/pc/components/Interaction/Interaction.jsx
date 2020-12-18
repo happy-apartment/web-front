@@ -75,12 +75,15 @@ const Interaction = ({callback}) => {
             <div className={classes.buttonWrapper} id="slider-button-wrapper">
                 {/*<p className={classes.totalP}>{d3.format('d')(weightState.hlt + weightState.saf + weightState.env + weightState.eco + weightState.edu + weightState.rel + weightState.hby)}</p>*/}
                 <Button
+                    variant="outlined"
+                    color="primary"
                     className={classes.initButton}
-                    onClick={initialize}
-                    color='#4770B3'>
+                    onClick={initialize}>
                     초기화
                 </Button>
                 <Button
+                    variant="outlined"
+                    color="primary"
                     className={classes.sendButton}
                     onClick={send}>
                     적용하기
