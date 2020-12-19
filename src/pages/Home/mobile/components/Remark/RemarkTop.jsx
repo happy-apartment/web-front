@@ -1,13 +1,14 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles(theme => ({  // style 요소 선언
-    wrapper: {
+    wrapperTop: {
         fontFamily: 'sans-serif',
         fontWeight: '500',
         position:'absolute',
-        right: '0',
-        bottom: '0',
-        width: '30%',
+        left: '0',
+        top: '0',
+        paddingLeft: '3vw',
+        width: '27%',
         display: 'flex',
         flexDirection: 'column',
         // transform: 'translate(600px, -120px)'
@@ -59,18 +60,18 @@ const useStyles = makeStyles(theme => ({  // style 요소 선언
 
     Content: {
         textAlign: 'center',
-        fontSize: '0.5rem',
+        fontSize: '0.1rem',
         display: 'inline',
         marginLeft: '5px',
     }
 }));
 
 
-const Remark = () => {
+const RemarkTop = () => {
     const classes = useStyles();
 
     return (
-        <div className={classes.wrapper} >
+        <div className={classes.wrapperTop} >
             <div className={classes.section}>
                 <div className={classes.Area1Color}> </div>
                 <div className={classes.Content}>집값 상위 20%</div>
@@ -96,4 +97,4 @@ const Remark = () => {
     )
 };
 
-export default Remark;
+export default RemarkTop;

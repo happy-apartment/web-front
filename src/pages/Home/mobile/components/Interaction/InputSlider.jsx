@@ -1,6 +1,6 @@
 import React, {useContext, useState} from 'react';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
-import {InteractionContext} from "../../PcHome";
+import {InteractionContext} from "../../MobileHome";
 import {UPDATE_ECO, UPDATE_EDU, UPDATE_ENV, UPDATE_HBY, UPDATE_HLT, UPDATE_REL, UPDATE_SAF} from "./constants";
 import Slider from '@material-ui/core/Slider';
 import Typography from '@material-ui/core/Typography';
