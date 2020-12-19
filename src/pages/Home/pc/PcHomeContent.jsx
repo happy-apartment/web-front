@@ -75,7 +75,7 @@ const PcHomeContent = ({callback}) => {
 
     const handleScroll = useCallback((index) => {
         d3.selectAll('.step')
-            .style('opacity', function (d, i) { return i === index ? 1 : 0.1; });
+            .style('opacity', function (d, i) { return i === index ? 1 : 0.0; });
         indexDispatch({type: UPDATE_INDEX, data: index})
     }, []);
 

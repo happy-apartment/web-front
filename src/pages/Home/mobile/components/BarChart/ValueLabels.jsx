@@ -7,7 +7,7 @@ const ValueLabels = (svg, index) => {
         .attr('font-style', 'normal')
         .attr('font-weight', '800')
         // .attr('font-size', '1rem')
-        .attr('font-size', '0.7rem')
+        .attr('font-size', '0.6rem')
         .attr('font-family', 'sans-serif')
         .style("font-variant-numeric", "tabular-nums")
         .attr("text-anchor", "end")

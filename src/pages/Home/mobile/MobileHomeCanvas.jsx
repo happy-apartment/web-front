@@ -19,7 +19,7 @@ import {
 } from '../../../constants';
 
 const useStyles = makeStyles((theme) => ({
-    root: {
+    canvasRoot: {
         width: "100%",
         display: "inline-block",
         position: "fixed",
@@ -32,13 +32,13 @@ const useStyles = makeStyles((theme) => ({
     },
 
     graphic: {
-        backgroundColor: "#AA20BB",
         position: 'absolute',
-        marginTop: '15vh',
         top: 0,
         right: 0,
         bottom: 0,
         left: 0,
+        paddingLeft: "1.5vw",
+        paddingRight: "1.5vw",
     },
 
 }));
@@ -50,7 +50,7 @@ const MobileHomeCanvas = ({weight}) => {
     const { indexState, indexDispatch } = useContext(IndexContext);
 
     return (
-        <div className={classes.root}>
+        <div className={classes.canvasRoot}>
             <div className={classes.graphic}>
                 {(function () {
                     switch (indexState) {

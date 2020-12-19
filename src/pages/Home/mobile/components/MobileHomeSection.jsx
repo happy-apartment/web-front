@@ -1,18 +1,17 @@
 import React from 'react';
 import { makeStyles } from "@material-ui/core";
+import {descriptions, titles} from "../texts/content-text";
+import Interaction from "./Interaction/Interaction";
 
 const useStyles = makeStyles((theme) => ({
     section: {
-        height: '15vh',
+        position: 'fixed',
         lineHeight: 1.5,
-        color: "#767678",
-        marginBottom: '5vh',
-        overflow: "visible",
     },
 
     title: {
         fontFamily:'NanumSquareRoundR',
-        fontSize: "x-large",
+        fontSize: "1.25em",
         fontWeight: "bold",
         marginBottom: "1vh",
         color: "#4770B3",
@@ -21,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
 
     description: {
         fontFamily:'NanumSquareRoundR',
-        fontSize: "medium",
+        fontSize: "1em",
         fontWeight: "normal",
         marginBottom: "1vh",
         color: "#9292A2",
@@ -29,18 +28,20 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const MobileHomeSection = ({title, descriptions, isInter, callback}) => {
+const MobileHomeSection = ({ index, callback }) => {
     const classes = useStyles();
 
+    console.log("description:", descriptions);
+    console.log("index:", index);
     return (
-        <div className={`${classes.section} step`}>
-            <div className={classes.title}>{title}</div>
+        <div className={classes.section}>
+            <p className={classes.title}>{titles[index]}</p>
             <p className={classes.description}>
-                {descriptions.map(d => {
+                {descriptions[index].map(d => {
                     return <span>{d}<br/></span>;
                 })}
             </p>
-            {/*{isInter === "1" ? <Interaction callback={callback} /> : null}*/}
+            {index === (titles.length - 1) ? <Interaction callback={callback} /> : null}
         </div>
     )
 };

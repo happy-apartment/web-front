@@ -1,4 +1,4 @@
-import React, {useEffect, useMemo} from 'react';
+import React, {useCallback, useEffect, useMemo, useState} from 'react';
 import * as d3 from 'd3';
 import { makeStyles } from "@material-ui/core";
 
@@ -7,27 +7,33 @@ import Axis from './Axis';
 import Labels from './Labels';
 import ValueLabels from './ValueLabels';
 
-import { width, height, duration, x } from './constants';
+import {duration, x, margin } from './constants';
 import { createDataset, createColorScale } from './utils';
 import { priceData, happyData } from '../../../../../data';
-import { Remark } from '../Remark';
+import Remark from '../Remark/Remark';
 
 
 const useStyles = makeStyles((theme) => ({
     wrapper: {
-        position: 'relative',
+        // position: 'relative',
+        // width: `${width}`,
+        // height: `${height}`,
     },
 
     barSvg: {
-        width: `${width}px`,
-        height: `${height}px`,
+        display: 'block',
+        marginTop: `${margin.top}`,
+        marginBottom: `${margin.bottom}`,
+        marginLeft: `${margin.left}`,
+        marginRight: `${margin.right}`,
+        overflow: 'visible'
     },
 
-    unit: {
-        fontSize:'0.5rem',
-        float:'right',
-        transform:'translate(0px, 15px)'
-    }
+    // unit: {
+    //     fontSize:'0.5rem',
+    //     float:'right',
+    //     transform:'translate(-15vw, -1vh)'
+    // }
 
 }));
 
@@ -56,6 +62,7 @@ const BarChart = ({index}) => {
 
             if (index === 1) {
                 x.domain([0, keyFrames[0][1][0].value]);
+                console.log("x:", x(179));
 
                 const priceKeyFrame = keyFrames[0];
                 updateAxis(priceKeyFrame, transition);
@@ -74,14 +81,12 @@ const BarChart = ({index}) => {
 
                 }
             }
-
-
         }, (err) => console.log(err))
     }, [index]);
 
     return (
         <div className={classes.wrapper} id="barchart-wrapper">
-            <div className={classes.unit} id="barchart-unit">{index === 1 ? '(단위: 천만원)' : '행복지수 (0~100)'}</div>
+            {/*<div className={classes.unit} id="barchart-unit">{index === 1 ? '(단위: 천만원)' : '행복지수 (0~100)'}</div>*/}
             <svg className={classes.barSvg} id="barchart-svg">
                 <g id="barchart-axis-g"></g>
                 <g id="barchart-bar-g"></g>

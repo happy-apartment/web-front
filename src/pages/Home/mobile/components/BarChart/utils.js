@@ -83,7 +83,7 @@ const makeNext = (nameFrames) => {
 
 
 export var textTween = (a, b) => {
-    const formatNumber = d3.format(".2f");
+    const formatNumber = d3.format(".1f");
     const i = d3.interpolateNumber(a, b);
 
     return function(t) {

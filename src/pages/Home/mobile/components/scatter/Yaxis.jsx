@@ -7,7 +7,7 @@ const Yaxis = (svg) => {
         .attr("transform", `translate(${width / 2}, 0)`);
 
     const axis = d3.axisLeft(y)
-        .ticks(width / 100)
+        .ticks(width / 50)
 
     // .tickSizeOuter(0);
     // .tickSizeInner(-barSize * (n + y.padding()));

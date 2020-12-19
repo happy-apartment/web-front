@@ -10,7 +10,7 @@ import Texts from "./Texts";
 import {y, margin, width, height, duration} from './constants';
 import { createDataset, createColorScale } from './utils';
 import { priceData } from '../../../../../data';
-import { Remark } from '../Remark';
+import RemarkTop from '../Remark/RemarkTop';
 
 import {
     ECO_SCATTER,
@@ -26,6 +26,8 @@ import {
 const useStyles = makeStyles((theme) => ({
     wrapper: {
         position: 'absolute',
+        left: "50%",
+        transform: "translateX(-50%)"
     },
 
     scatterSvg : {
@@ -88,7 +90,7 @@ const Scatter = ({index}) => {
             const updateXaxis = Xaxis(svg);
             const updateYaxis = Yaxis(svg);
             const updateCircles = Circles(svg, color);
-            const updateTexts = Texts(svg);
+            // const updateTexts = Texts(svg);
 
             let indexData = [];
             switch (index) {
@@ -117,21 +119,21 @@ const Scatter = ({index}) => {
             updateXaxis(null, transition);
             updateYaxis(null, transition);
             updateCircles(indexData, transition);
-            updateTexts(indexData, transition);
+            // updateTexts(indexData, transition);
         });
     }, [index]);
 
     return (
         <div className={classes.wrapper} id="scatter-wrapper">
-            <div className={classes.unit} id="scatter-unit">(단위: 천만원)</div>
+            {/*<div className={classes.unit} id="scatter-unit">(단위: 천만원)</div>*/}
             <svg className={classes.scatterSvg} id="scatter-svg">
                 <g id="scatter-x-axis-g"></g>
                 <g id="scatter-y-axis-g"></g>
                 <g id="scatter-circles-g"></g>
-                <g id="scatter-texts-g"></g>
+                {/*<g id="scatter-texts-g"></g>*/}
             </svg>
-            <div className={classes.x_unit} id="scatter-x-unit">{getXUnit}</div>
-            <Remark/>
+            {/*<div className={classes.x_unit} id="scatter-x-unit">{getXUnit}</div>*/}
+            <RemarkTop/>
         </div>
 
     )

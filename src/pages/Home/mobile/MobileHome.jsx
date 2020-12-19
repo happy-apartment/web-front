@@ -12,24 +12,39 @@ import {
     UPDATE_REL,
     UPDATE_SAF
 } from "../../../constants";
+import MobileHomeScroller from "./MobileHomeScroller";
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        // backgroundColor: "#AFECB0",
+        // position: "relative",
+        // height: "640px",
+        minWidth: "360px",
+        height: `${window.innerHeight}`,
+        position: "fixed",
     },
 
-    wrapper: {
-        // backgroundColor: "#AFEC12",
-        width: "100%",
-        height: "100%",
-        paddingTop: "1vh",
-        display: "block",
+    container: {
+        height: "100vh"
+    },
+
+    contentWrapper: {
+        width: "100vw",
+    },
+
+    canvasWrapper: {
+        width: "100vw",
+    },
+
+    scrollerWrapper: {
+        display: "float",
+        float: "right",
+        marginTop: "15px",
     },
 }));
 
 export const IndexContext = createContext();
 
-const initialIndex = -1;
+const initialIndex = 0;
 
 const indexReducer = (state, action) => {
     if (action.type === UPDATE_INDEX) {
@@ -130,16 +145,25 @@ const MobileHome = () => {
     });
 
     return (
-        <div className={classes.root}>
-            <div className={classes.wrapper}>
-                <IndexContext.Provider value={{indexState, indexDispatch}}>
-                    <InteractionContext.Provider value={{weightState, weightDispatch}}>
-                        <MobileHomeCanvas weight={weight}/>
-                        <MobileHomeContent callback={changeBarChartByWeight}/>
-                    </InteractionContext.Provider>
-                </IndexContext.Provider>
-            </div>
-        </div>
+
+            <IndexContext.Provider value={{indexState, indexDispatch}}>
+                <InteractionContext.Provider value={{weightState, weightDispatch}}>
+                    <div className={classes.root}>
+                        <div className={classes.container}>
+                            <div className={classes.contentWrapper}>
+                                <MobileHomeContent callback={changeBarChartByWeight}/>
+                            </div>
+                            <div className={classes.canvasWrapper}>
+                                <MobileHomeCanvas weight={weight}/>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={classes.scrollerWrapper}>
+                        <MobileHomeScroller/>
+                    </div>
+                </InteractionContext.Provider>
+            </IndexContext.Provider>
+
     )
 };
 

@@ -6,14 +6,14 @@ import Axis from "./Axis";
 import Labels from "./Labels";
 import ValueLabels from "./ValueLabels";
 import { createInteractionDataset, createColorScale } from "./utils";
-import {Remark} from "../Remark";
+import Remark from "../Remark/Remark";
 import { priceData } from '../../../../../data';
 import {makeStyles} from "@material-ui/core";
 import {width} from "../BarChart/constants";
 
 const useStyles = makeStyles((theme) => ({
     wrapper: {
-        position: 'relative',
+        position: 'absolute',
     },
 
     interBarSvg: {
@@ -23,8 +23,7 @@ const useStyles = makeStyles((theme) => ({
 
     unit: {
         fontSize:'0.5rem',
-        float:'right',
-        transform:'translate(0px, 0px)'
+        // transform:'translate(-15vw, -3px)'
     }
 
 }));
