@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
         width: '100%',
         fontSize: '6vw',
         textAlign: 'center',
-        color: '#50AED3',
+        color: '##50AED3',
     }
 }));
 
