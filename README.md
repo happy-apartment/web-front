@@ -1,6 +1,6 @@
-## ** The instruction below is offered in Korean, for the ease of access from classmates of the course, "Visualization for Data Science" in 2020 Fall Semester. For those interested please visit the interactive webpage from the link here: https://stark-hollows-84322.herokuapp.com/welcome **
+## The instruction below is offered in Korean, for the ease of access from classmates of the course, "Visualization for Data Science" in 2020 Fall Semester. For those interested please visit the interactive webpage from the link here: https://stark-hollows-84322.herokuapp.com/welcome
 
-## 아래의 설치가이드를 따라서 설치하여 작동하거나, 위의 링크를 통해 웹페이지에 직접 접속하실 수 있습니다.
+### 아래의 설치가이드를 따라서 설치하여 작동하거나, 위의 링크를 통해 웹페이지에 직접 접속하실 수 있습니다.
 
 ## **1. Node.js 설치**
 - Node.js 를 설치하는 것은 이후에 필요한 npm 을 사용하기 위해서 입니다.
