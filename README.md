@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+## ** The instruction below is offered in Korean, for the ease of access from classmates of the course, "Visualization for Data Science" in 2020 Fall Semester. For those interested please visit the interactive webpage from the link here: https://stark-hollows-84322.herokuapp.com/welcome **
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 아래의 설치가이드를 따라서 설치하여 작동하거나, 위의 링크를 통해 웹페이지에 직접 접속하실 수 있습니다.
 
-## Available Scripts
+## **1. Node.js 설치**
+- Node.js 를 설치하는 것은 이후에 필요한 npm 을 사용하기 위해서 입니다.
+- [Node.js 홈페이지](https://nodejs.org/ko/)
 
-In the project directory, you can run:
 
-### `yarn start`
+## **2. Create-react-app 설치**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- npm install -g create-react-app을 터미널 혹은 CMD에 타이핑해주세요
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `yarn test`
+## **3.  프로젝트 디렉토리 생성**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- npx create-react-app sigak-final
+- (이렇게 하면 sigak-final) 이라는 공간이 생깁니다
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## **4. Git clone (혹은 Zip 파일다운로드)**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- 모든 파일을 다 받아주세요
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+## **5. 폴더 이동**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- 위의 4번의 압축 해제 후, 해당 폴더 전체를 위의 방식대로 생성된 sigak-final 폴더 밑에 넣어주세요.
+- sigak-final 폴더는 아마 c\사용자\owner 에 있을 확률이 큽니다.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## **6. 마지막 스텝**
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- cd sigak-final/vis_d3_project
+- npm update
+- npm start
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- 그리고 브라우저가 열리는 걸 기다리면 됩니다!
